@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import FileUploader from "./components/FileUploader";
 import QueryInput from "./components/QueryInput";
 import Results from "./components/Results";
