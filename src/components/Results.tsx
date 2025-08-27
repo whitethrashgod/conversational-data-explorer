@@ -1,4 +1,3 @@
-import React from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 export default function Results({ rows }: { rows: Record<string, any>[] }) {
