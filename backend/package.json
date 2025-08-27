@@ -1,0 +1,14 @@
+{
+  "name": "conversational-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "file:...",
+    "cors": "file:...",
+    "express": "file:...",
+    "node-fetch": "file:..."
+  }
+}
