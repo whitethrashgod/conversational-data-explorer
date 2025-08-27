@@ -17,7 +17,7 @@ export function applyInstructions(rows: Record<string, any>[], instructions: any
 
   if (instructions.action === "aggregate") {
     const agg = instructions.aggregate || {};
-    const func = agg.func || "sum";
+    //const func = agg.func || "sum";
     const column = agg.column;
     const groupBy = agg.groupBy;
     if (!column) return [];
