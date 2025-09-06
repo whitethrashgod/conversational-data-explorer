@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { applyInstructions } from "../utils/queryProcessor";   // 👈 make sure this import is present
 
-const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://conversational-data-explorer-1.onrender.com";
+
 
 type Props = {
   headers: string[];
