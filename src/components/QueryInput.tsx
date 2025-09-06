@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { applyInstructions } from "../utils/queryProcessor";   // 👈 make sure this import is present
 
-const API_BASE = import.meta.env.VITE_API_BASE || "https://conversational-data-explorer-1.onrender.com";
-
+// Use deployed backend as default
+const API_BASE =
+  import.meta.env.VITE_API_BASE ||
+  "https://conversational-data-explorer-1.onrender.com";
 
 type Props = {
   headers: string[];
@@ -27,13 +29,18 @@ export default function QueryInput({ headers, rows, onResult }: Props) {
       const data = await response.json();
       const instructions = data.instructions;
 
+      // ✅ Debug logs
+      console.log("User Query:", input);
+      console.log("Instructions from Groq:", instructions);
+      console.log("Available CSV headers:", headers);
+
       // Apply the Groq-generated JSON instructions to your CSV rows
       const resultRows = applyInstructions(rows, instructions);
 
       // Send results back to App.tsx so Results.tsx updates
       onResult(resultRows);
 
-      console.log("Instructions:", instructions);
+      // ✅ More debug logs
       console.log("Computed Results:", resultRows);
     } catch (err) {
       console.error("Error:", err);
